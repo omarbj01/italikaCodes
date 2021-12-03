@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>Italika Pruebas números de serie</title>
+		<meta name="description" content="Blueprint: " />
+		<meta name="keywords" content="" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/default.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<script src="js/modernizr.custom.js"></script>
+	</head>
+	<body>
+		<div class="container">	
+			<header class="clearfix">
+				<span>ITALIKA</span>
+				<h1>Códigos de barras</h1></br>
+                <p>Escanea o ingresa un número de serie, apurale por que se agotan....</p>
+			</header>
+			<div id="cbp-fwslider" class="cbp-fwslider">
+				<ul id="imagesCode">
+                    
+				</ul>
+			</div>
+		</div>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="js/jquery.cbpFWSlider.min.js"></script>
+		<script>
+			$( function() {
+				/*
+                 <li><a href="#"><img src="images/5.jpg" alt="img05"/></a></li>
+				- how to call the plugin:
+				$( selector ).cbpFWSlider( [options] );
+				- options:
+				{
+					// default transition speed (ms)
+					speed : 500,
+					// default transition easing
+					easing : 'ease'
+				}
+				- destroy:
+				$( selector ).cbpFWSlider( 'destroy' );
+				*/
+                
+                var codes = ["3SCK2AET8M1014391",
+                "3SCK2AEHXM1004411",
+                "LLCK19A49MB005521",
+                "3SCK2AEH2M1002247",
+                "LRPK4EKC5ME006654",
+                "LLCK19A40MB014754",
+                "LRPK3FJDXME003073",
+                "LRPK9FRA3ME002730",
+                "LLCK5GLK3MA100893",
+                "3SCK19AB0M1007904",
+                "3SCK19AB3M1022350",
+                "3SCK19AB5M1023161",
+                "3SCK19AB7M1015580",
+                "3SCK19AB7M1022691",
+                "3SCK1AA00M1005330",
+                "3SCK1AAC3M1002447",
+                "3SCK1AAC3M1007356",
+                "3SCK1AAC5M1009321",
+                "3SCK1AAC6M1005780",
+                "3SCK1AAC7M1011961",
+                "3SCK1AAF3M1008839",
+                "3SCK1AAF6M1008222",
+                "3SCK1AAF7M1009329",
+                "3SCK1AAF9M1013091",
+                "3SCK1AAFXM1010412",
+                "3SCK1AAFXM1015349",
+                "3SCK1AAH0M1006984",
+                "3SCK1AAH0M1007133",
+                "3SCK1AAH2M1007179",
+                "3SCK1AAH3M1006090",
+                "3SCK1AAH7M1006772",
+                "3SCK1AAK4M1002528",
+                "3SCK1AAK7M1003804",
+                "3SCK1AAK8M1001866",
+                "3SCK1AAS4M1012931",
+                "3SCK1AAS5M1011321",
+                "3SCK1AAS5M1013022",
+                "3SCK1AAS9M1012861",
+                "3SCK1AASXM1011508",
+                "3SCK1AAU0M1015990",
+                "3SCK1AAU1M1021507",
+                "3SCK1AAU2M1017109",
+                "3SCK1AAU3M1020729",
+                "3SCK1AAU3M1021296",
+                "3SCK1AAU4M1020187",
+                "3SCK1AAU4M1021629",
+                "3SCK1AAU5M1021428",
+                "3SCK1AAU7M1003254",
+                "3SCK1AAU8M1016868",
+                "3SCK1AAU9M1018208",
+                "3SCK1AAUXM1018685",
+                "3SCK27EB9M1005371",
+                "3SCK29EL1M1010374",
+                "3SCK29EL1M1017678",
+                "3SCK29EL2M1010920",
+                "3SCK29EL3M1018962",
+                "3SCK29EL4M1012989",
+                "3SCK29EL5M1016713",
+                "3SCK29EL5M1017943",
+                "3SCK29EL7M1016261",
+                "3SCK29ELXM1015640",
+                "3SCK29EM0M1032164",
+                "3SCK29EM1M1029337",
+                "3SCK29EM4M1033348",
+                "3SCK2AEF9M1007038",
+                "3SCK2AEG2M1005074",
+                "3SCK2AEG6M1006678",
+                "3SCK2AEH3M1016562",
+                "3SCK2AEHXM1005347",
+                "3SCK2AEHXM1016624",
+                "3SCK2AEHXM1018146",
+                "3SCK2AEN0M1033700",
+                "3SCK2AEN0M1047628",
+                "3SCK2AEN0M1054790",
+                "3SCK2AEN1M1050375",
+                "3SCK2AEN1M1055060",
+                "3SCK2AEN2M1054404",
+                "3SCK2AEN4M1055666",
+                "3SCK2AEN5M1026483",
+                "3SCK2AEN5M1052355",
+                "3SCK2AEN7M1037467",
+                "3SCK2AEN7M1049201",
+                "3SCK2AEN7M1050395",
+                "3SCK2AEN7M1053345",
+                "3SCK2AEN8M1052687",
+                "3SCK2AENXM1032764",
+                "3SCK2AEP1M1013506",
+                "3SCK2AEP7M1009654",
+                "3SCK2AEPXM1015075",
+                "3SCK2AER1M1020554",
+                "3SCK2AER1M1025074",
+                "3SCK2AER1M1025527",
+                "3SCK2AER5M1021772",
+                "3SCK2AER5M1022615",
+                "3SCK2AER5M1023988",
+                "3SCK2AER9M1018521",
+                "3SCK2AET0M1038698",
+                "3SCK2AET0M1039950",
+                "3SCK2AET0M1052780",
+                "3SCK2AET1M1013292",
+                "3SCK2AET1M1054098",
+                "3SCK2AET2M1025726",
+                "3SCK2AET2M1050495",
+                "3SCK2AET2M1052943",
+                "3SCK2AET3M1026612",
+                "3SCK2AET3M1049940",
+                "3SCK2AET3M1051932",
+                "3SCK2AET3M1052465",
+                "3SCK2AET3M1053406",
+                "3SCK2AET4M1023332",
+                "3SCK2AET4M1053933",
+                "3SCK2AET5M1039152",
+                "3SCK2AET6M1029956",
+                "3SCK2AET6M1054078",
+                "3SCK2AET7M1052873",
+                "3SCK2AET8M1014391",
+                "3SCK2AET8M1037069",
+                "3SCK2AET8M1043048",
+                "3SCK2AET8M1050596",
+                "3SCK2AETXM1034688",
+                "3SCK2AETXM1037056",
+                "3SCK2AETXM1050275",
+                "3SCK2AETXM1054052",
+                "3SCK2DEU1M1006711",
+                "3SCK2DEU9M1005757",
+                "3SCK2EEV4M1007494",
+                "3SCK2EEV8M1004842",
+                "3SCK2FEX5M1010038",
+                "3SCK2FEX6M1012039",
+                "3SCK2FEX7M1012566",
+                "3SCK2FEX7M1013037",
+                "3SCK2FEX8M1011829",
+                "3SCK2FEX9M1013069",
+                "3SCK3AJB7M1004445",
+                "3SCK3AJB9M1005211",
+                "3SCK3EJC2M1001453",
+                "3SCK3EJC2M1006880",
+                "3SCK3EJC2M1007611",
+                "3SCK3EJC4M1004791",
+                "3SCK4AKA7M1011849",
+                "3SCK4AKF3M1011861",
+                "3SCK4DKBXM1006705",
+                "3SCK4EKH0M1039898",
+                "3SCK4EKH0M1041554",
+                "3SCK4EKH0M1046205",
+                "3SCK4EKH0M1046298",
+                "3SCK4EKH4M1009903",
+                "3SCK4EKH4M1041668",
+                "3SCK4EKH6M1037282",
+                "3SCK4EKH9M1039804",
+                "3SCK4EKHXM1042890",
+                "3SCK4EKHXM1044199",
+                "3SCK4FKD8M1003590",
+                "3SCK59LA1M1022453",
+                "3SCK59LA1M1027586",
+                "3SCK59LA1M1046123",
+                "3SCK59LA2M1015432",
+                "3SCK59LA2M1020498",
+                "3SCK59LA2M1047815",
+                "3SCK59LA3M1047502",
+                "3SCK59LA5M1026263",
+                "3SCK59LA5M1027610",
+                "3SCK59LA9M1045964",
+                "3SCK59LAXM1041227",
+                "3SCK5ALB0M1026553",
+                "3SCK5ALB2M1027011",
+                "3SCK5ALB4M1026619",
+                "3SCK5ALB7M1019504",
+                "3SCK5ALB7M1026260",
+                "3SCK5ALB9M1026972",
+                "3SCK5ALBXM1026463",
+                "3SCK5ELC0M1008442",
+                "3SCK5ELC1M1001130",
+                "3SCK5ELC4M1008816",
+                "3SCK5ELC8M1007734",
+                "3SCK5ELE0M1003727",
+                "3SCK5ELE3M1003463",
+                "3SCK5FLD0M1016040",
+                "3SCK5FLD0M1016085",
+                "3SCK5FLD1M1013194",
+                "3SCK5FLD2M1011034",
+                "3SCK5FLD3M1004691",
+                "3SCK5FLD8M1012818",
+                "3SCK5FLD8M1015363",
+                "3SCK5FLDXM1010486",
+                "3SCK5FLDXM1015705",
+                "3SCK67MAXM1001293",
+                "3SCK67MB0M1026423",
+                "3SCK67MB1M1027192",
+                "3SCK67MB2M1018484",
+                "3SCK67MB2M1027945",
+                "3SCK67MB4M1017398",
+                "3SCK67MB5M1022495",
+                "3SCK67MB5M1026496",
+                "3SCK67MB7M1020974",
+                "3SCK67MB7M1025933",
+                "3SCK67MB8M1027531",
+                "3SCK67MB9M1027375",
+                "3SCK67MBXM1011430",
+                "3SCK69MC1M1013894",
+                "3SCK69MC1M1019047",
+                "3SCK69MC2M1020353",
+                "3SCK69MC4M1013372",
+                "3SCK69MC7M1019702",
+                "3SCK69MC9M1013867",
+                "3SCPATCS4L1035364",
+                "3SCPATCS6L1035592",
+                "3SCPZWEE0K1013684",
+                "LLCK19A40MB008534",
+                "LLCK19A45MB012448",
+                "LLCK19A46MB014015",
+                "LLCK19A48MB011181",
+                "LLCK5FLF2MA101269",
+                "LLCK5GLK6MA100340",
+                "LLCK5GLK9MA100882",
+                "LLCK9ERB5MC101063",
+                "LLCK9ERB5MC104545",
+                "LLCK9ERB8MC104622",
+                "LLCLPJGG3LE101230",
+                "LLCLPMB04LA102244",
+                "LRPK3FJD2ME003259",
+                "LRPK3FJD3ME003111",
+                "LRPK3FJD4ME003649",
+                "LRPK3FJD5ME003014",
+                "LRPK3FJD6ME003037",
+                "LRPK3FJDXME003090",
+                "LRPK5ELH1ME001507",
+                "LRPK5ELH5ME000876",
+                "LRPK5ELHXME001215",
+                "LRPK9FRA6ME002706",
+                "LRPK9FRA7ME002620",
+                "LZRK1AAP0MH011918",
+                "LZRK1AAP0MH012325",
+                "LZRK1AAP4MH007936",
+                "LZRK1AAP7MH010880",
+                "LZRK1AAP8MH006465",
+                "LZRK1AAP9MH011836",
+                "LZSK4FKK0MF011175",
+                "LZSK4FKK0MF016649",
+                "LZSK4FKK0MF124138",
+                "LZSK4FKK1MF122303",
+                "LZSK4FKK2MF013476",
+                "LZSK4FKK3MF013423",
+                "LZSK4FKK3MF013888",
+                "LZSK4FKK4MF011065",
+                "LZSK4FKK4MF124160",
+                "LZSK4FKK5MF015237",
+                "LZSK4FKK6MF012394",
+                "LZSK4FKK9MF013488",
+                "LZSK4FKK9MF014446",
+                "LZSK4FKKXMF121991"]
+                                
+                var ul = document.getElementById("imagesCode");
+                for (var i=0;i<=codes.length;i++)
+                  {
+                        var li = document.createElement("li");
+                        var _img=document.createElement('img');
+                        var _lik=document.createElement('a');
+                        _lik.href ="#"
+                        _img.src="https://barcode.tec-it.com/barcode.ashx?data="+codes[i]+"&code=Code128&translate-esc=on";
+                        _img.id="code"+i;
+                        _lik.appendChild(_img);
+                        li.appendChild(_lik);
+                        ul.appendChild(li);
+                      /*
+                    var _img=document.createElement('img');
+                    _img.src="https://barcode.tec-it.com/barcode.ashx?data=ABC-abc-1234&code=Code128&translate-esc=on";
+                    _img.id="code"+i;
+                    _list[i].appendChild(_img);
+*/
+                  }
+				$( '#cbp-fwslider' ).cbpFWSlider();
+
+			} );
+		</script>
+	</body>
+</html>
