@@ -17,7 +17,7 @@
 		<div class="container">	
 			<header class="clearfix">
 				<span>ITALIKA</span>
-                <p>Códigos de barras</p></br>
+                <p>Códigos de barras</p>
                 <p>Escanea o ingresa un número de serie, apurale por que se agotan....</p>
 			</header>
 			<div id="cbp-fwslider" class="cbp-fwslider">
@@ -29,6 +29,10 @@
 		<script src="js/jquery.min.js"></script>
 		<script src="js/jquery.cbpFWSlider.min.js"></script>
 		<script>
+            function myFunction(element) {
+                var ul = document.getElementById("imagesCode");
+                ul.appendChild(li);
+            }
 			$( function() {
 				/*
                  <li><a href="#"><img src="images/5.jpg" alt="img05"/></a></li>
@@ -297,7 +301,7 @@
                 "LZSK4FKK9MF014446",
                 "LZSK4FKKXMF121991"]
                                 
-                var ul = document.getElementById("imagesCode");
+                // var ul = document.getElementById("imagesCode");
                 for (var i=0;i<=codes.length;i++)
                   {
                         var li = document.createElement("li");
@@ -308,7 +312,7 @@
                         _img.id="code"+i;
                         _lik.appendChild(_img);
                         li.appendChild(_lik);
-                        ul.appendChild(li);
+                        setTimeout(myFunction, 900)
                       /*
                     var _img=document.createElement('img');
                     _img.src="https://barcode.tec-it.com/barcode.ashx?data=ABC-abc-1234&code=Code128&translate-esc=on";
